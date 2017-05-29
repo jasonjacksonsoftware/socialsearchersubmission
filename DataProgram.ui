@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Jason Jackson</author>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1389</width>
+    <height>704</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Social Searcher</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <widget class="QFrame" name="frMain">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1381</width>
+      <height>901</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="lblTwitterUsers">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>20</y>
+       <width>161</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>3</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Twitter Usernames </string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frFreqDist">
+     <property name="geometry">
+      <rect>
+       <x>880</x>
+       <y>320</y>
+       <width>481</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <widget class="QLabel" name="lblFreqDistOptions">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>10</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <underline>true</underline>
+        <strikeout>false</strikeout>
+        <kerning>false</kerning>
+       </font>
+      </property>
+      <property name="text">
+       <string>Frequency Distribution Options</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbIncludeFreqDist">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>441</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Include frequency distributions for each individual account</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbCommonWords">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>321</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Find the                 most common words.</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbIncludeFreqDistAllAccounts">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>220</y>
+        <width>481</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Include frequency distribution for all accounts combined </string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbIncludeCollFreqDist">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>180</y>
+        <width>361</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Include freqeuncy distributions for collocations</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leCommonWords">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>95</y>
+        <width>73</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leExcludeChars">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>282</x>
+        <y>130</y>
+        <width>35</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbExcludeShortWords">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>130</y>
+        <width>441</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Exclude words that are less than         characters.  </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>160</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>(Default and minimum will be 3)</string>
+      </property>
+     </widget>
+     <zorder>cbExcludeShortWords</zorder>
+     <zorder>lblFreqDistOptions</zorder>
+     <zorder>cbIncludeFreqDist</zorder>
+     <zorder>cbCommonWords</zorder>
+     <zorder>cbIncludeFreqDistAllAccounts</zorder>
+     <zorder>cbIncludeCollFreqDist</zorder>
+     <zorder>leCommonWords</zorder>
+     <zorder>leExcludeChars</zorder>
+     <zorder>label</zorder>
+    </widget>
+    <widget class="QFrame" name="frTweetNumberOptions">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>391</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>5</number>
+     </property>
+     <widget class="QLineEdit" name="leDiscardAccounts">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>20</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly</set>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbDiscardAccounts">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>221</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Discard Accounts with Tweets less than:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leMaxTweets">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>60</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly</set>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>4</number>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblMaxTweets">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>221</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Max Tweets to collect per account: (3200 Max. This is the default amount if box is left empty.)</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frDateFilter">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>180</y>
+       <width>391</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>7</number>
+     </property>
+     <widget class="QLabel" name="lblMaxTweetWarning">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>231</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>*Twitter only allows mining up to 3200 of the most recent Tweets at this time. Tweets that can't be mined may or may not exist in the desired data range. </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblTweetRecent">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Most Recent Date to Look For:</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbFilterDate">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>91</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Filter by date</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblTweetOldest">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Oldest Date to Look For:</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="deTweetOldest">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>40</y>
+        <width>110</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+      <property name="date">
+       <date>
+        <year>1994</year>
+        <month>8</month>
+        <day>31</day>
+       </date>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="deTweetRecent">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>80</y>
+        <width>110</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+      <property name="date">
+       <date>
+        <year>2017</year>
+        <month>8</month>
+        <day>31</day>
+       </date>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frButtons">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>460</y>
+       <width>371</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>5</number>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="leftMargin">
+       <number>100</number>
+      </property>
+      <property name="rightMargin">
+       <number>100</number>
+      </property>
+      <property name="bottomMargin">
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btnStart">
+        <property name="text">
+         <string>Start</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnStop">
+        <property name="text">
+         <string>Stop</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnStopAndDiscard">
+        <property name="text">
+         <string>Stop and Discard Data</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="lblContentType">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>380</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Type of Content to Search For:</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="lwContent">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>420</y>
+       <width>291</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhNone</set>
+     </property>
+     <item>
+      <property name="text">
+       <string>Political</string>
+      </property>
+      <property name="checkState">
+       <enum>Checked</enum>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Racial</string>
+      </property>
+      <property name="checkState">
+       <enum>Checked</enum>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>LGBT</string>
+      </property>
+      <property name="checkState">
+       <enum>Checked</enum>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Terrorism</string>
+      </property>
+      <property name="checkState">
+       <enum>Checked</enum>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="lblBadDataReasons">
+     <property name="geometry">
+      <rect>
+       <x>1000</x>
+       <y>200</y>
+       <width>211</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>The most common reasons for this include:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblAccountInstructions">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>60</y>
+       <width>351</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Please use only usernames and no URLS. The @ synbol is not necessary.</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>640</y>
+       <width>1261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblBadAccounts">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>10</y>
+       <width>391</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Usernames that appear here were unable to be mined. </string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="txtBadUsernames">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>60</y>
+       <width>381</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhMultiLine</set>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="TeTwitterUsernames">
+     <property name="geometry">
+      <rect>
+       <x>465</x>
+       <y>90</y>
+       <width>371</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777214</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="sizeIncrement">
+      <size>
+       <width>1</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="placeholderText">
+      <string>Enter one username per line. </string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="lwBadDataReasons">
+     <property name="geometry">
+      <rect>
+       <x>920</x>
+       <y>220</y>
+       <width>341</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Misspellings</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Deleted or  protected accounts</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>There were no Tweets to mine.</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>None of the user's Tweets satisfied the desired search criteria.</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="flags">
+       <set>ItemIsEnabled</set>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="btnImportWordlist">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>600</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Import Word List</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1389</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>true</bool>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_Project"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_As"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuTwitter">
+    <property name="title">
+     <string>Twitter Options</string>
+    </property>
+    <addaction name="actionDeveloper_Credentials"/>
+    <addaction name="actionTwitter_Advanced_Search"/>
+    <addaction name="actionTwitter_Developer_Login"/>
+    <addaction name="actionView_Last_Frequency_Distribution"/>
+    <addaction name="actionContent_Analysis"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuTwitter"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen_Project">
+   <property name="text">
+    <string>Open Project</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_As">
+   <property name="text">
+    <string>Save As</string>
+   </property>
+  </action>
+  <action name="actionTwitter_Usernames">
+   <property name="text">
+    <string>Twitter Usernames</string>
+   </property>
+  </action>
+  <action name="actionWord_Lists">
+   <property name="text">
+    <string>Word Lists</string>
+   </property>
+  </action>
+  <action name="actionStatisical_Data">
+   <property name="text">
+    <string>Statisical Data</string>
+   </property>
+  </action>
+  <action name="actionDeveloper_Credentials">
+   <property name="text">
+    <string>Developer Credentials</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+  </action>
+  <action name="actionTwitter_Advanced_Search">
+   <property name="text">
+    <string>Twitter Advanced Search</string>
+   </property>
+  </action>
+  <action name="actionTwitter_Developer_Login">
+   <property name="text">
+    <string>Twitter Developer Login</string>
+   </property>
+  </action>
+  <action name="actionView_Last_Frequency_Distribution">
+   <property name="text">
+    <string>View Last Frequency Distribution</string>
+   </property>
+  </action>
+  <action name="actionContent_Analysis">
+   <property name="text">
+    <string>Content Analysis</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="9"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>683</x>
+     <y>447</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>20</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>20</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
